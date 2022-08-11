@@ -1,17 +1,18 @@
 function primeFinder(n) {
-    let result = [2, 3];
-    for (let i = 4; i<= n; i++) {
-      let flag = true;
-      for (let j = 2; j <= i/2; j++ ) {
-        if (i % j == 0) {
-          flag = false;
+  const primeArray = [];
+    for (let i = 2; i < n; i++) {
+        let isPrime = true;
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
         }
-      }
-      if (flag) {
-        result.push(i)
-      }
-  }
-  return result;
+        if (isPrime) {
+            primeArray.push(i);
+        }
+    }
+    return primeArray;
   }
   
   
